@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 posts = [
     {
         'id': 0,
@@ -52,8 +53,9 @@ def index(request):
 def post_detail(request, id):
     template = 'blog/detail.html'
     post = posts[id]
-    return render(request, template, {'post':post})
+    return render(request, template, {'post': post})
 
 
 def category_posts(request, category_slug):
-    return render(request, 'blog/category.html', {'category_slug': category_slug})
+    return render(request, 'blog/category.html', {'category_slug':
+                  category_slug})
