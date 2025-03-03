@@ -1,6 +1,6 @@
 <header>
-  {% with request.resolver_match.view_name as view_name %}
   {% load static %}
+  {% with request.resolver_match.view_name as view_name %}
   <nav class="navbar navbar-light" style="background-color: lightskyblue">
     <div class="container">
       <a class="nav-link" href="{% url 'blog:index' %}">

@@ -4,23 +4,7 @@
 {% endblock %}
 {% block content %}
   <div class="container py-5">
-    <article>
-      <ul>
-        <li>
-          Место: {{ post.location }}
-        </li>
-        <li>
-          Дата:
-          {{ post.date }}
-        </li>
-        <li>
-          Категория: <a href="{% url 'blog:category_posts' post.category %}">blog.category</a>
-        </li>
-      </ul>         
-      <p>
-        {{ post.text|linebreaksbr }}
-      </p>          
-    </article>                
+    {% include "includes/card.html" with post=post is_detail=True %}                
   </div>
 {% endblock %}
 
