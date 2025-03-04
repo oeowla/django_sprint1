@@ -45,7 +45,7 @@ posts = [
 ]
 
 
-posts_dict = {post['id']: post for post in posts}
+POSTS_DICT = {post['id']: post for post in posts}
 
 
 def index(request):
@@ -54,7 +54,7 @@ def index(request):
 
 def post_detail(request, id):
     try:
-        post = posts_dict[id]
+        post = POSTS_DICT[id]
     except KeyError:
         raise Http404('Пост не найден')
     return render(request, 'blog/detail.html', {'post': post})
